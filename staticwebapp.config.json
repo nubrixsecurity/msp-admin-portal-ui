@@ -1,12 +1,24 @@
 {
   "routes": [
     {
-      "route": "/",
+      "route": "/403",
+      "allowedRoles": ["anonymous", "authenticated"]
+    },
+    {
+      "route": "/api/*",
       "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/admin",
+      "allowedRoles": ["Admin"]
     },
     {
       "route": "/admin/*",
       "allowedRoles": ["Admin"]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
     }
   ],
   "responseOverrides": {
@@ -15,8 +27,7 @@
       "statusCode": 302
     },
     "403": {
-      "redirect": "/403",
-      "statusCode": 302
+      "rewrite": "/403"
     }
   }
 }

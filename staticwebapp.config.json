@@ -10,11 +10,11 @@
     },
     {
       "route": "/admin",
-      "allowedRoles": ["Admin"]
+      "allowedRoles": ["admin"]
     },
     {
       "route": "/admin/*",
-      "allowedRoles": ["Admin"]
+      "allowedRoles": ["admin"]
     },
     {
       "route": "/*",

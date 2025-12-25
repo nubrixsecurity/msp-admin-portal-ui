@@ -30,14 +30,13 @@ app.http("whoami", {
       return { status: 401, jsonBody: { error: "Unauthorized: missing client principal." } };
     }
 
-    return {
-      status: 200,
-      jsonBody: {
-        identityProvider: principal.identityProvider ?? null,
-        userId: principal.userId ?? null,
-        userDetails: principal.userDetails ?? null,
-        userRoles: principal.userRoles ?? []
-      }
-    };
+  return {
+    status: 200,
+    jsonBody: {
+      buildSource: "repo-api",
+      identityProvider: principal.identityProvider ?? null,
+      userId: principal.userId ?? null,
+      userDetails: principal.userDetails ?? null,
+      userRoles: principal.userRoles ?? []
   }
-});
+};
